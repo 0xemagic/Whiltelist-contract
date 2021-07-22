@@ -18,7 +18,7 @@ contract Whitelist is Ownable {
         length++;
         emit WhitelistAdded(addr);
     }
-    
+
     function sub(address addr) public onlyOwner {
         require(addr != address(0));
         whitelist[addr] = false;
@@ -39,5 +39,10 @@ contract Whitelist is Ownable {
             return false;
         }
         return whitelist[addr];
+    
+    }
+
+    function isCheck(address addr) public view return (bool) {
+        require(addr != address(0));
     }
 }
