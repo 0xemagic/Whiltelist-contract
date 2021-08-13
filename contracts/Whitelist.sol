@@ -32,8 +32,14 @@ contract Whitelist is Ownable {
         length++;
         emit WhitelistRemoved(addr);
     }
+    function removeAll() public onlyOwner {
+        require(addr != address(0));
+        whitelist[addr] = false;
+        length++;
+        emit WhitelistRemoved(addr);
+    }
     function isListed(address addr) public view returns (bool) {
-        // require(addr != address(0));
+        require(addr != address(0));
         if (length == 0) {
             return false;
         }
