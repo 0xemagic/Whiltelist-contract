@@ -41,7 +41,7 @@ contract Whitelist is Ownable {
 
     }
 
-    function isCheck(address addr) public view return (bool) {
-        require(addr != address(0));
-    }
+    // function isCheck(address addr) public view return (bool) {
+    //     require(addr != address(0));
+    // }
 }
