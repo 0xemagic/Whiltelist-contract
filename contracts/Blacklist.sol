@@ -26,6 +26,12 @@ contract Blacklist is Ownable {
         emit BlacklistRemoved(addr);
     }
 
+    function remove() public onlyOwner {
+        require(addr != address(0));
+        blacklist.remove();
+        emit BlacklistRemoved(addr);
+    }
+
     function isListed(address addr) public view returns (bool) {
         require(addr != address(0));
         if (length == 0) {
