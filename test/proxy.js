@@ -21,7 +21,10 @@ contract('Proxy', async () => {
     let v = await proxy.staticString.call()
     assert.equal(v, 'bar', 'staticString() did not return expected string')
   })
-
+  it('should return static string from proxied method', async () => {
+    let v = await proxy.staticString.call()
+    assert.equal(v, 'bar', 'staticString() did not return expected string')
+  })
   it('should return static address proxied method', async () => {
     let v = await proxy.staticAddress.call()
     assert(v.toLowerCase() === '0xdcad3a6d3569df655070ded06cb7a1b2ccd1d3af', 'staticAddress() did not return expected address')
