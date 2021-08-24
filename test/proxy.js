@@ -63,4 +63,9 @@ contract('Proxy', async () => {
     assert(res[0].toNumber() === 42, 'staticMixed() did not return expected number for first return value')
     assert(res[1] === 'bar', 'staticMixed() did not return expected string for second return value')
   })
+  it('should return mixed values from proxied method', async () => {
+    let res = await proxy.staticMixed.call()
+    assert(res[0].toNumber() === 42, 'staticMixed() did not return expected number for first return value')
+    assert(res[1] === 'bar', 'staticMixed() did not return expected string for second return value')
+  })
 })
