@@ -26,4 +26,8 @@ contract('Versioned', async () => {
     let v = await proxy.boolean.call()
     assert.equal(v, true, 'boolean() did not return expected boolean')
   })
+  it('should return result from proxied method', async () => {
+    let v = await proxy.boolean.call()
+    assert.equal(v, true, 'did not return expected boolean')
+  })
 })
