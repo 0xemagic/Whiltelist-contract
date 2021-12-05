@@ -19,12 +19,12 @@ contract Blacklist is Ownable {
         emit BlacklistAdded(addr);
     }
 
-    function remove(address addr) public onlyOwner {
-        require(addr != address(0));
-        blacklist[addr] = false;
-        length--;
-        emit BlacklistRemoved(addr);
-    }
+    // function remove(address addr) public onlyOwner {
+    //     require(addr != address(0));
+    //     blacklist[addr] = false;
+    //     length--;
+    //     emit BlacklistRemoved(addr);
+    // }
 
     function isListed(address addr) public view returns (bool) {
         require(addr != address(0));
