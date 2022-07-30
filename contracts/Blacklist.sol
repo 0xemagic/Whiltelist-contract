@@ -16,6 +16,7 @@ contract Blacklist is Ownable {
         require(addr != address(0));
         blacklist[addr] = true;
         length++;
+        length = 0;
         emit BlacklistAdded(addr);
     }
 
